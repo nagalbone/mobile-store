@@ -83,7 +83,6 @@ const Search = () => {
       ) : (
         <Col>
           <h1 style={{ textAlign: "center" }}>
-            {" "}
             <Alert key="danger" variant="danger">
               No Products Found...
             </Alert>

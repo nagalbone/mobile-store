@@ -8,7 +8,10 @@ import { useNavigate } from "react-router-dom";
 import { useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { useCartContext } from "../context/cart_context";
 function NavScrollExample() {
+
+  const {total_item} = useCartContext();
   const disable = {
     textDecoration: "none",
   };
@@ -18,7 +21,7 @@ function NavScrollExample() {
   const [search, updateSearch] = useState("");
 
   const searchFun = (e) => {
-    if (search == "") {
+    if (search === "") {
       ref.current.focus();
       ref.current.style.borderColor = "red";
     } else {
@@ -66,6 +69,18 @@ function NavScrollExample() {
             <Nav.Link>
               <Link to="/cart" title="My Cart" style={disable}>
                 <FontAwesomeIcon icon={faCartShopping} />
+                <div
+                style={{
+                  backgroundColor: '#4479c8',
+                  width: "12px",
+                  height: "17px",
+                  borderRadius: "50%",
+                  marginTop: "-34px",
+                  marginLeft: "4px",
+                  textAlign:'center',
+                  color:'antiquewhite',
+                }}
+              >{total_item}</div>
               </Link>
             </Nav.Link>
           </Nav>

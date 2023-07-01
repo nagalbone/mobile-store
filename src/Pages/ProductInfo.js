@@ -3,9 +3,12 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Products from "../Products";
 import { Row, Col } from "react-bootstrap";
+import { useCartContext } from "../context/cart_context";
 const ProductInfo = () => {
+  const {addToCart} = useCartContext();
   const params = useParams();
   const [data, updatedata] = useState([]);
+  const [amount,setAmount] = useState(1);
   const navigate = useNavigate();
   useEffect(() => {
     Products.filter((val) => {
@@ -14,6 +17,8 @@ const ProductInfo = () => {
       }
     });
   }, [params.id]);
+  const {id,name,price} = data;
+  const stocks = 5;
   return (
     <>
       <button
@@ -39,7 +44,10 @@ const ProductInfo = () => {
             <div>Description: {data.description}</div>
             <br />
             <div>
-              <button className="btn btn-primary">Add To Cart</button>
+              <button onClick={()=>setAmount(amount == 1 ? 1 : amount - 1)}>-</button>
+              <input type="text" value={amount} disabled style={{width:'34px',textAlign:'center'}}/>
+              <button onClick={()=>setAmount(amount == stocks ? stocks : amount + 1)}>+</button>
+              <button className="btn btn-primary" onClick={()=>addToCart(id,name,price,amount)}>Add To Cart</button>
             </div>
           </div>
         </Col>

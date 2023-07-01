@@ -6,7 +6,7 @@ const AllProducts = () => {
   const [data, updateData] = useState([]);
   useEffect(() => {
     const newArr = Products.filter((val) => {
-      if (val.featured == true) {
+      if (val.featured === true) {
         return val;
       }
     });
