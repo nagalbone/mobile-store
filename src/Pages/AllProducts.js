@@ -18,7 +18,6 @@ const AllProducts = () => {
         style={{
           textAlign: "center",
           margin: "20px",
-          color: "rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1))",
         }}
       >
         Featured Products

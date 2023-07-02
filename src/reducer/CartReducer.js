@@ -1,7 +1,7 @@
 const CartReducer = (state,action) => {
   if(action.type === "ADD_TO_CART")
   {
-    let {id,name,price,amount} = action.payload;
+    let {id,name,price,amount,image} = action.payload;
     
     //check item already exist
     const isExist = [...state.cart].filter((val)=>val.id === id);
@@ -13,7 +13,8 @@ const CartReducer = (state,action) => {
             name:name,
             price:price,
             amount:amount,
-            sub_total: price * amount
+            sub_total: price * amount,
+            image
         }
         return {
             ...state,
@@ -54,7 +55,7 @@ const CartReducer = (state,action) => {
     }
   }
 
-  if(action.type == "TOTAL_CART_COUNT")
+  if(action.type === "TOTAL_CART_COUNT")
   {
     const total_item = state.cart.reduce((initialValue,currElem)=>{
         let {amount} = currElem;

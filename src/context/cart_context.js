@@ -12,8 +12,8 @@ const Cartprovider = ({children}) =>{
     const [state,dispatch] = useReducer(reducer,initialState);
 
     // add to cart
-    const addToCart = (id,name,price,amount)=>{
-        dispatch({type:"ADD_TO_CART",payload:{id,name,price,amount}});
+    const addToCart = (id,name,price,amount,image)=>{
+        dispatch({type:"ADD_TO_CART",payload:{id,name,price,amount,image}});
     }
 
     //clear cart

@@ -7,7 +7,6 @@ const Footer = () => {
       <div
         style={{
           width: "100%",
-          height: "auto",
           backgroundColor: "rgb(189 201 213)",
           textAlign: "center",
           color: "#8b6565",

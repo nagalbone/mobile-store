@@ -1,4 +1,3 @@
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
@@ -14,6 +13,7 @@ function NavScrollExample() {
   const {total_item} = useCartContext();
   const disable = {
     textDecoration: "none",
+    color:'black'
   };
 
   const navigate = useNavigate();
@@ -21,6 +21,7 @@ function NavScrollExample() {
   const [search, updateSearch] = useState("");
 
   const searchFun = (e) => {
+    e.preventDefault();
     if (search === "") {
       ref.current.focus();
       ref.current.style.borderColor = "red";
@@ -35,7 +36,7 @@ function NavScrollExample() {
       <Container fluid>
         <Navbar.Brand>
           <Link to="/" style={disable}>
-            <button className="btn btn-primary">Mobile Shop</button>
+            <button className="btn btn-secondary">Mobile Shop</button>
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -71,7 +72,7 @@ function NavScrollExample() {
                 <FontAwesomeIcon icon={faCartShopping} />
                 <div
                 style={{
-                  backgroundColor: '#4479c8',
+                  backgroundColor: '#5c636a',
                   width: "12px",
                   height: "17px",
                   borderRadius: "50%",
@@ -95,9 +96,9 @@ function NavScrollExample() {
               ref={ref}
               onChange={(e) => updateSearch(e.target.value)}
             />
-            <Button variant="outline-success" onClick={searchFun}>
+            <button className="btn btn-secondary" onClick={searchFun}>
               Search
-            </Button>
+            </button>
           </Form>
         </Navbar.Collapse>
       </Container>

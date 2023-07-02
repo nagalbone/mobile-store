@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Col } from "react-bootstrap";
+import PriceHelper from "../helper/PriceHelper";
 const Card = ({ props, index }) => {
   const navigate = useNavigate();
   return (
@@ -12,19 +13,19 @@ const Card = ({ props, index }) => {
         lg={3}
         key={index}
         className="card"
-        style={{ padding: "20px", height: "383px" }}
+        style={{ padding: "20px", height: "383px",border: 'none' }}
       >
         <img src={props.image} height="150px" alt="preview" />
         <br />
         <h3>
           <Link
             to={"../product-info/" + props.id}
-            style={{ textDecoration: "none" }}
+            style={{ textDecoration: "none",color:'black' }}
           >
             {props.name}
           </Link>
         </h3>
-        <div>Price: Rs. {props.price}</div>
+        <div>Price: <PriceHelper price={props.price} /></div>
         <div>Category: {props.category}</div>
         <div style={{ display: "flex" }}>
           Colors:{" "}
@@ -45,7 +46,7 @@ const Card = ({ props, index }) => {
         </div>
         <input
           type="button"
-          className="btn btn-primary"
+          className="btn btn-secondary"
           value="Show More"
           onClick={() => navigate("../product-info/" + props.id)}
           style={{

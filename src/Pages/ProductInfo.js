@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Products from "../Products";
 import { Row, Col } from "react-bootstrap";
 import { useCartContext } from "../context/cart_context";
+import PriceHelper from "../helper/PriceHelper";
 const ProductInfo = () => {
   const {addToCart} = useCartContext();
   const params = useParams();
@@ -17,14 +18,15 @@ const ProductInfo = () => {
       }
     });
   }, [params.id]);
-  const {id,name,price} = data;
+  const {id,name,price,image} = data;
   const stocks = 5;
   return (
     <>
       <button
-        className="btn btn-light"
+        className="btn btn-secondary"
         style={{ margin: "10px" }}
         onClick={() => navigate("/")}
+        title="Go Back"
       >
         {"<<"}
       </button>
@@ -39,15 +41,16 @@ const ProductInfo = () => {
         </Col>
         <Col>
           <div>
-            <h3>product Name: {data.name}</h3>
-            <h3>Price: {data.price}</h3>
-            <div>Description: {data.description}</div>
+            <h3>Product Name: {data.name}</h3>
+            <h3>Price: <PriceHelper price={data.price} /></h3>
+            <div>{data.description}</div>
             <br />
             <div>
-              <button onClick={()=>setAmount(amount == 1 ? 1 : amount - 1)}>-</button>
-              <input type="text" value={amount} disabled style={{width:'34px',textAlign:'center'}}/>
-              <button onClick={()=>setAmount(amount == stocks ? stocks : amount + 1)}>+</button>
-              <button className="btn btn-primary" onClick={()=>addToCart(id,name,price,amount)}>Add To Cart</button>
+              <button className="btn btn-light" onClick={()=>setAmount(amount == 1 ? 1 : amount - 1)}>-</button>
+              <input type="text" value={amount} disabled style={{width:'34px',textAlign:'center',height: '32px'}}/>
+              <button className="btn btn-light" onClick={()=>setAmount(amount == stocks ? stocks : amount + 1)}>+</button>
+              &nbsp;
+              <button className="btn btn-secondary" onClick={()=>addToCart(id,name,price,amount,image)}>Add To Cart</button>
             </div>
           </div>
         </Col>
