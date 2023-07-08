@@ -3,7 +3,7 @@ const Products = [
     id: "prodnoa",
     name: "iphone x",
     company: "apple",
-    price: 6000000,
+    price: 120000,
     colors: ["#ff0000", "#000000", "#CDD0D0"],
     image:
       "https://images.pexels.com/photos/1275229/pexels-photo-1275229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -16,7 +16,7 @@ const Products = [
     id: "prodnob",
     name: "samsung s20",
     company: "samsung",
-    price: 5000000,
+    price: 30000,
     colors: ["#000", "#22D3EF"],
     image:
       "https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -30,7 +30,7 @@ const Products = [
     id: "prodnoc",
     name: "Dell Series",
     company: "dell",
-    price: 600000,
+    price: 70000,
     colors: ["#22D3EF", "#CDD0D0"],
     image:
       "https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -42,7 +42,7 @@ const Products = [
     id: "prodnod",
     name: "Nokia 420",
     company: "nokia",
-    price: 12599,
+    price: 1800,
     colors: ["#000", "#000000", "#CDD0D0"],
     image:
       "https://images.pexels.com/photos/4224099/pexels-photo-4224099.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -55,7 +55,7 @@ const Products = [
     id: "prodnoe",
     name: "Mac Pc",
     company: "apple",
-    price: 4000099,
+    price: 140000,
     colors: ["#000", "#CDD0D0"],
     image:
       "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -69,7 +69,7 @@ const Products = [
     id: "prodnof",
     name: "Macbook Pro",
     company: "apple",
-    price: 42999,
+    price: 130000,
     colors: ["#000000", "#CDD0D0"],
     image:
       "https://images.pexels.com/photos/303383/pexels-photo-303383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -82,7 +82,7 @@ const Products = [
     id: "prodnog",
     name: "Asus gseries",
     company: "asus",
-    price: 23999,
+    price: 80000,
     colors: ["#CDD0D0", "#000"],
     image:
       "https://images.pexels.com/photos/261662/pexels-photo-261662.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -94,7 +94,7 @@ const Products = [
   {
     id: "prodnoh",
     name: "Accessories",
-    price: 1099999,
+    price: 210000,
     company: "lenova",
     colors: ["#000", "#CDD0D0"],
     image:
@@ -108,7 +108,7 @@ const Products = [
   {
     id: "prodnoi",
     name: "Iwatch",
-    price: 39999,
+    price: 30000,
     company: "apple",
     colors: ["#000000"],
     image:
@@ -123,7 +123,7 @@ const Products = [
     id: "prodnoj",
     name: "user need",
     company: "apple",
-    price: 300099,
+    price: 190000,
     colors: ["#ff0000", "#22D3EF", "#000000"],
     image:
       "https://images.pexels.com/photos/1619651/pexels-photo-1619651.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -135,7 +135,7 @@ const Products = [
     id: "prodnok",
     name: "rolex premium",
     company: "rolex",
-    price: 999999,
+    price: 50000,
     colors: ["#000000", "#CDD0D0"],
     image:
       "https://images.pexels.com/photos/1697214/pexels-photo-1697214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -146,7 +146,7 @@ const Products = [
   {
     id: "prodnol",
     name: "galaxy w20",
-    price: 311999,
+    price: 31500,
     company: "samsung",
     colors: ["#22D3EF", "#ff0000", "#000000"],
     image:

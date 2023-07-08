@@ -2,8 +2,10 @@ import React from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import Card from "../components/Card";
 import { useFilterContext } from "../context/filter_context";
+import Alert from "react-bootstrap/Alert";
 const Shop = () => {
-  const { filterProductInput, all_products } = useFilterContext();
+  const { filterProductInput, all_products, filter_products } =
+    useFilterContext();
   const getUniqueProductCategory = (data, attr) => {
     let newuniqueList = data.map((val) => {
       return val[attr];
@@ -98,9 +100,15 @@ const Shop = () => {
         </Col>
         <Col md={10}>
           <Row>
-            {all_products?.map((row, index) => {
-              return <Card props={row} key={index} />;
-            })}
+            {filter_products.length !== 0 ? (
+              filter_products?.map((row, index) => {
+                return <Card props={row} key={index} />;
+              })
+            ) : (
+              <Alert key="danger" variant="danger">
+                Product Not Found...!
+              </Alert>
+            )}
           </Row>
         </Col>
       </Row>

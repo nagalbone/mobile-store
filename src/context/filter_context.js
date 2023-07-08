@@ -1,10 +1,10 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import { createContext, useContext, useReducer } from "react";
 import reducer from "../reducer/FilterReducer";
 import Products from "../Products";
 const FilterContext = createContext();
 
 const initialState = {
-  filter_products: [],
+  filter_products: Products,
   all_products: Products,
   grid_view: true,
   sorting_value: "lowest",
