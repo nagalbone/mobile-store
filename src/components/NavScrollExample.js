@@ -36,7 +36,7 @@ function NavScrollExample() {
       <Container fluid>
         <Navbar.Brand>
           <Link to="/" style={disable}>
-            <button className="btn btn-secondary">Mobile Shop</button>
+            <img src="images/logo.png" width="70px" height="50px" alt="Logo" />
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
