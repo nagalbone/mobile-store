@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useEffect } from "react";
 import reducer from "../reducer/FilterReducer";
 import Products from "../Products";
 const FilterContext = createContext();
@@ -29,11 +29,33 @@ const Filterprovider = ({ children }) => {
     });
   };
 
+  //filter by price
+  const filterByPrice = (option) => {
+    dispatch({
+      type: "FILTER_BY_PRICE",
+      payload: option,
+    });
+  };
+
+  //filter by company
+  const filterByCompany = (option) => {
+    dispatch({
+      type: "FILTER_BY_COMPANY",
+      payload: option,
+    });
+  };
+
+  useEffect(() => {
+    dispatch({ type: "FILTER_BY_PRICE", payload: "lth" });
+  }, []);
+
   return (
     <FilterContext.Provider
       value={{
         ...state,
         filterProductInput,
+        filterByPrice,
+        filterByCompany,
       }}
     >
       {children}

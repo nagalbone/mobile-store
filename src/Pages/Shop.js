@@ -4,8 +4,13 @@ import Card from "../components/Card";
 import { useFilterContext } from "../context/filter_context";
 import Alert from "react-bootstrap/Alert";
 const Shop = () => {
-  const { filterProductInput, all_products, filter_products } =
-    useFilterContext();
+  const {
+    filterProductInput,
+    filterByPrice,
+    filterByCompany,
+    all_products,
+    filter_products,
+  } = useFilterContext();
   const getUniqueProductCategory = (data, attr) => {
     let newuniqueList = data.map((val) => {
       return val[attr];
@@ -15,9 +20,9 @@ const Shop = () => {
     }
     return (newuniqueList = ["All", ...new Set(newuniqueList)]);
   };
-  const category = getUniqueProductCategory(all_products, "category");
+  // const category = getUniqueProductCategory(all_products, "category");
   const company = getUniqueProductCategory(all_products, "company");
-  const colors = getUniqueProductCategory(all_products, "colors");
+  // const colors = getUniqueProductCategory(all_products, "colors");
 
   return (
     <Container>
@@ -48,17 +53,17 @@ const Shop = () => {
               onChange={(e) => filterProductInput(e.target.value)}
             />
             &nbsp;Sort Price
-            <select>
-              <option>Low To High</option>
-              <option>High To Low</option>
+            <select onChange={(e) => filterByPrice(e.target.value)}>
+              <option value="lth">Low To High</option>
+              <option value="htl">High To Low</option>
             </select>
           </div>
         </Col>
       </Row>
       <Row>
         <Col md={2}>
-          <div className="card" style={{ padding: "10px" }}>
-            <h5>Category</h5>
+          <div className="card" style={{ padding: "10px", height: "200px" }}>
+            {/* <h5>Category</h5>
             {category.map((val, index) => {
               return (
                 <h5 key={index}>
@@ -67,9 +72,12 @@ const Shop = () => {
               );
             })}
 
-            <hr />
+            <hr /> */}
             <h5>Company</h5>
-            <select className="form-control">
+            <select
+              className="form-control"
+              onChange={(e) => filterByCompany(e.target.value)}
+            >
               {company.map((val, index) => {
                 return (
                   <option key={val} value={val}>
@@ -78,7 +86,7 @@ const Shop = () => {
                 );
               })}
             </select>
-            <hr />
+            {/* <hr />
             <h5>Colors</h5>
             <div style={{ display: "flex" }}>
               {colors.map((col) => {
@@ -95,7 +103,7 @@ const Shop = () => {
                   ></div>
                 );
               })}
-            </div>
+            </div> */}
           </div>
         </Col>
         <Col md={10}>
